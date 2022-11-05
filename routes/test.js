@@ -1,5 +1,5 @@
-import express from 'express';
-import fs from 'fs';
+const express = require('express');
+const data = require('../data/test.json');
 
 const router = express.Router();
 
@@ -11,8 +11,7 @@ router.get('/quran', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-    const data = JSON.parse(fs.readFileSync('./data/test.json'));
     res.json({ data });
 });
 
-export default router;
+module.exports = router;
